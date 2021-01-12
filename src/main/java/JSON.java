@@ -18,8 +18,6 @@ public class JSON {
 
     public JSON(String Pahtfile_To_DUSTConf) throws IOException, ParseException
     {
-
-
     }
 
     public static void initializeDUSTChannels(String Pahtfile_To_DUSTConf) throws IOException, ParseException {
@@ -41,6 +39,8 @@ public class JSON {
 
         System.out.println(dustBlockChannels.getBlockName());//TODO: A possible error can accur here when the return type is null.
 
+
+        //Works fine.
         for (int i= 0; i< channelarray.size();i++)
         {
             JSONObject channelNameobj = (JSONObject) channelarray.get(i);
