@@ -1,5 +1,14 @@
 import java.util.ArrayList;
 
+/**
+ * This class is a Singleton class.
+ * It is used to load a DUST configuration file in.
+ *
+ *
+ * @author Vincent Charpentier
+ * @version 1.0
+ * @since   2021-01-9
+ */
 public class DUSTBlockChannels {
 
 

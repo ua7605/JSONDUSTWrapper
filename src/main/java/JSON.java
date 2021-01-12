@@ -7,13 +7,16 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Discription:
+ * The JSON class will load the a JSON configuration file in.
+ * The JSON file is a DUST configuration file that were the block name is specified and all the channels were an application
+ * can send data.
  */
 public class JSON {
 
 
 
-    public JSON() throws IOException, ParseException {
+    public JSON() throws IOException, ParseException
+    {
 
         JSONParser jsonParser = new JSONParser();
 
@@ -31,25 +34,20 @@ public class JSON {
         DUSTBlockChannels dustBlockChannels = DUSTBlockChannels.getInstance();
         dustBlockChannels.setBlockName(blockname);
 
-        System.out.println(dustBlockChannels.getBlockName());//TODO: A possible error can accur here when the return type is null. 
+        System.out.println(dustBlockChannels.getBlockName());//TODO: A possible error can accur here when the return type is null.
 
-        for (int i= 0; i< channelarray.size();i++){
+        for (int i= 0; i< channelarray.size();i++)
+        {
             JSONObject channelNameobj = (JSONObject) channelarray.get(i);
 
             String channelName = (String)channelNameobj.get("channelName"+i);
             dustBlockChannels.addChannelName(channelName);
-
         }
 
-        for (String index: dustBlockChannels.getChannelNameList()){
-
+        for (String index: dustBlockChannels.getChannelNameList())
+        {
             System.out.println(index);
-
         }
-
-
-
-
     }
 
 
