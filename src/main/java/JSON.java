@@ -28,17 +28,20 @@ public class JSON {
 
         JSONArray channelarray = (JSONArray) jsonObject.get("list-of-channels");
 
-        ChannelList listChannels = ChannelList.getInstance();
+        DUSTBlockChannels dustBlockChannels = DUSTBlockChannels.getInstance();
+        dustBlockChannels.setBlockName(blockname);
+
+        System.out.println(dustBlockChannels.getBlockName());//TODO: A possible error can accur here when the return type is null. 
 
         for (int i= 0; i< channelarray.size();i++){
             JSONObject channelNameobj = (JSONObject) channelarray.get(i);
 
             String channelName = (String)channelNameobj.get("channelName"+i);
-            listChannels.addChannelName(channelName);
+            dustBlockChannels.addChannelName(channelName);
 
         }
 
-        for (String index: listChannels.getChannelNameList()){
+        for (String index: dustBlockChannels.getChannelNameList()){
 
             System.out.println(index);
 
