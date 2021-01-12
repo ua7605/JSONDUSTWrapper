@@ -3,6 +3,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -19,6 +20,9 @@ public class JSON {
     {
 
 
+    }
+
+    public static void initializeDUSTChannels(String Pahtfile_To_DUSTConf) throws IOException, ParseException {
         JSONParser jsonParser = new JSONParser();
 
         FileReader reader = new FileReader(Pahtfile_To_DUSTConf);
@@ -41,13 +45,8 @@ public class JSON {
         {
             JSONObject channelNameobj = (JSONObject) channelarray.get(i);
 
-            String channelName = (String)channelNameobj.get("channelName"+i);
-            dustBlockChannels.addChannelName(channelName);
-        }
-
-        for (String index: dustBlockChannels.getChannelNameList())
-        {
-            System.out.println(index);
+            dustBlockChannels.addChannelName((String)channelNameobj.get("channelName"+i));
+            System.out.println(dustBlockChannels.getChannelNameList().get(i));
         }
     }
 

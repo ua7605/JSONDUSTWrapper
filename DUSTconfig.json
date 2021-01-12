@@ -2,7 +2,8 @@
   "BlockName-of-subscribe-block": "subscribe-block",
   "list-of-channels": [
     {"channelName0": "subscribe-tcp"},
-    {"channelName1": "subscribe-tcp"}
+    {"channelName1": "subscribe-tcp"},
+    {"channelName2": "subscribe-tcp"}
 
 
   ]
