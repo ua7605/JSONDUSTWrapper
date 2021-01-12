@@ -3,7 +3,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
@@ -29,13 +28,21 @@ public class JSON {
 
         JSONArray channelarray = (JSONArray) jsonObject.get("list-of-channels");
 
+        ChannelList listChannels = ChannelList.getInstance();
+
         for (int i= 0; i< channelarray.size();i++){
             JSONObject channelNameobj = (JSONObject) channelarray.get(i);
 
             String channelName = (String)channelNameobj.get("channelName"+i);
-            System.out.println(channelName);
+            listChannels.addChannelName(channelName);
+
         }
 
+        for (String index: listChannels.getChannelNameList()){
+
+            System.out.println(index);
+
+        }
 
 
 
