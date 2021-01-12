@@ -6,7 +6,7 @@ public class main {
 
     public static void main(String[] args) throws IOException, ParseException {
 
-        JSON json = new JSON();
+        JSON json = new JSON("DUSTconfig.json");
 
 
 

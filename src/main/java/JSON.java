@@ -15,12 +15,13 @@ public class JSON {
 
 
 
-    public JSON() throws IOException, ParseException
+    public JSON(String Pahtfile_To_DUSTConf) throws IOException, ParseException
     {
+
 
         JSONParser jsonParser = new JSONParser();
 
-        FileReader reader = new FileReader("DUSTconfig.json");
+        FileReader reader = new FileReader(Pahtfile_To_DUSTConf);
 
         Object object = jsonParser.parse(reader);
 
