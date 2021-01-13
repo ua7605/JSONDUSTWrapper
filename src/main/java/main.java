@@ -7,7 +7,7 @@ public class main {
     public static void main(String[] args) throws IOException, ParseException {
 
 
-        JSON.initializeDUSTChannels("DUSTconfig.json");
+        JSONHandeler.initializeDUSTChannels("DUSTconfig.json");
 
 
     }

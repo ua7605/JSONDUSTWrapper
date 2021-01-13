@@ -12,11 +12,11 @@ import java.io.IOException;
  * The JSON file is a DUST configuration file that were the block name is specified and all the channels were an application
  * can send data.
  */
-public class JSON {
+public class JSONHandeler {
 
 
 
-    public JSON(String Pahtfile_To_DUSTConf) throws IOException, ParseException
+    public JSONHandeler(String Pahtfile_To_DUSTConf) throws IOException, ParseException
     {
     }
 
@@ -39,15 +39,20 @@ public class JSON {
 
         System.out.println(dustBlockChannels.getBlockName());//TODO: A possible error can accur here when the return type is null.
 
+        if(dustBlockChannels.getBlockName() != null)
+        {
+            for (int i= 0; i< channelarray.size();i++)
+            {
+                JSONObject channelNameobj = (JSONObject) channelarray.get(i);
+
+                dustBlockChannels.addChannelName((String)channelNameobj.get("channelName"+i));
+                System.out.println(dustBlockChannels.getChannelNameList().get(i));
+            }
+
+        }
 
         //Works fine.
-        for (int i= 0; i< channelarray.size();i++)
-        {
-            JSONObject channelNameobj = (JSONObject) channelarray.get(i);
 
-            dustBlockChannels.addChannelName((String)channelNameobj.get("channelName"+i));
-            System.out.println(dustBlockChannels.getChannelNameList().get(i));
-        }
     }
 
 
