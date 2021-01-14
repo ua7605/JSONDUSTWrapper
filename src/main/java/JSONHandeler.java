@@ -20,7 +20,8 @@ public class JSONHandeler {
     {
     }
 
-    public static void initializeDUSTChannels(String Pahtfile_To_DUSTConf) throws IOException, ParseException {
+    public static void initializeDUSTChannels(String Pahtfile_To_DUSTConf) throws IOException, ParseException
+    {
         JSONParser jsonParser = new JSONParser();
 
         FileReader reader = new FileReader(Pahtfile_To_DUSTConf);
@@ -31,13 +32,13 @@ public class JSONHandeler {
 
         String blockname = (String) jsonObject.get("BlockName-of-subscribe-block");
 
-
         JSONArray channelarray = (JSONArray) jsonObject.get("list-of-channels");
 
         DUSTBlockChannels dustBlockChannels = DUSTBlockChannels.getInstance();
+
         dustBlockChannels.setBlockName(blockname);
 
-        System.out.println(dustBlockChannels.getBlockName());//TODO: A possible error can accur here when the return type is null.
+        System.out.println(dustBlockChannels.getBlockName());
 
         if(dustBlockChannels.getBlockName() != null)
         {
@@ -48,7 +49,6 @@ public class JSONHandeler {
                 dustBlockChannels.addChannelName((String)channelNameobj.get("channelName"+i));
                 System.out.println(dustBlockChannels.getChannelNameList().get(i));
             }
-
         }
 
         //Works fine.
