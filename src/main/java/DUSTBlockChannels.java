@@ -9,14 +9,14 @@ import java.util.ArrayList;
  * @version 1.0
  * @since   2021-01-9
  */
-public class DUSTBlockChannels {
-
-
+public class DUSTBlockChannels
+{
     static DUSTBlockChannels obj = new DUSTBlockChannels();
     static String blockName;
     static ArrayList<String> channelNameList;
 
-    private DUSTBlockChannels() {
+    private DUSTBlockChannels()
+    {
         channelNameList = new ArrayList<>();
     }
 
@@ -30,15 +30,18 @@ public class DUSTBlockChannels {
         channelNameList.add(channelName);
     }
 
-    public ArrayList<String> getChannelNameList() {
+    public ArrayList<String> getChannelNameList()
+    {
         return channelNameList;
     }
 
-    public void setBlockName(String blockName) {
+    public void setBlockName(String blockName)
+    {
         DUSTBlockChannels.blockName = blockName;
     }
 
-    public String getBlockName() {
+    public String getBlockName()
+    {
         if (blockName == null){
             System.out.println("The block has not been initialized!");
             return null;

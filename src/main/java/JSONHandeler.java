@@ -50,12 +50,6 @@ public class JSONHandeler {
                 System.out.println(dustBlockChannels.getChannelNameList().get(i));
             }
         }
-
         //Works fine.
-
     }
-
-
-
-
 }
