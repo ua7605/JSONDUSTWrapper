@@ -12,14 +12,8 @@ import java.io.IOException;
  * The JSON file is a DUST configuration file that were the block name is specified and all the channels were an application
  * can send data.
  */
-public class JSONHandeler {
-
-
-
-    public JSONHandeler(String Pahtfile_To_DUSTConf) throws IOException, ParseException
-    {
-    }
-
+public class JSONHandeler
+{
     public static void initializeDUSTChannels(String Pahtfile_To_DUSTConf) throws IOException, ParseException
     {
         JSONParser jsonParser = new JSONParser();
